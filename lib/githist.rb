@@ -1,5 +1,7 @@
 require "githist/version"
+require "githist/shitometer"
 
 module Githist
-  # Your code goes here...
+  class Engine < Rails::Engine
+  end
 end
