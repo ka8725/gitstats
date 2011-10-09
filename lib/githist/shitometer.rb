@@ -22,7 +22,7 @@ module Githist
             <script type="text/javascript">
 
               // Load the Visualization API and the piechart package.
-              google.load('visualization', '1.0', {'packages':['corechart']});
+              google.load('visualization', '1.0', {'packages':['corechart', 'table']});
 
               // Set a callback to run when the Google Visualization API is loaded.
               google.setOnLoadCallback(drawChart);
@@ -33,26 +33,33 @@ module Githist
               function drawChart() {
 
               // Create the data table.
-              var data = new google.visualization.DataTable();
+              data = new google.visualization.DataTable();
               data.addColumn('string', 'Developer');
               data.addColumn('number', 'Count strings');
-              data.addRows(#{res.to_json});
-
+              items = #{res.to_json};
+              data.addRows(items);
               // Set chart options
-              var options = {'title':'How Much Pizza I Ate Last Night',
-                             'width':400,
-                             'height':300};
-
+              var options = {'title':'Git stats',
+                             'width':700,
+                             'height':600};
               // Instantiate and draw our chart, passing in some options.
               var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
               chart.draw(data, options);
+              var table = new google.visualization.Table(document.getElementById('table_div'));
+              table.draw(data, {showRowNumber: true});
+              google.visualization.events.addListener(table, 'select', function() {
+                var row = table.getSelection()[0].row;
+                alert('You selected ' + data.getValue(row, 0));
+              });
             }
             </script>
           </head>
 
           <body>
             <!--Div that will hold the pie chart-->
-            <div id="chart_div"></div>
+            <div id="chart_div" styles="margin:auto"></div>
+            <br />
+            <div id="table_div"></div>
           </body>
         </html>
         EOB
