@@ -7,9 +7,11 @@ Gem::Specification.new do |s|
   s.version     = Gitstats::VERSION
   s.authors     = ["Andrey Koleshko"]
   s.email       = ["ka8725@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "http://ka8725.github.com/gitstats"
   s.summary     = %q{Show git statistics using blame}
-  s.description = %q{Show git statistics using blame}
+  s.description = %q{Show git statistics using blame. More metrics are coming.}
+
+  s.rubyforge_project = "gitstats"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
