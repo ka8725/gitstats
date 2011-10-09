@@ -1,17 +1,15 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "githist/version"
+require "gitstats/version"
 
 Gem::Specification.new do |s|
-  s.name        = "githist"
-  s.version     = Githist::VERSION
+  s.name        = "gitstats"
+  s.version     = Gitstats::VERSION
   s.authors     = ["Andrey Koleshko"]
   s.email       = ["ka8725@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Show git history for blame}
-  s.description = %q{Show git history for blame}
-
-  s.rubyforge_project = "githist"
+  s.summary     = %q{Show git statistics using blame}
+  s.description = %q{Show git statistics using blame}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

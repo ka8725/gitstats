@@ -1,3 +1,3 @@
 Rails.application.routes.draw do |map|
-  mount  Githist::Shitometer => '/s'
+  mount  Gitstats::Shitometer => '/gitstats'
 end

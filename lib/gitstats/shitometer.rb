@@ -1,4 +1,4 @@
-module Githist
+module Gitstats
   class Shitometer
     def self.call(env)
       filelist = `git ls-files --exclude-standard`.split.reject {|x| x =~ /(^vendor)|(^public\/images)|(^public\/stylesheets)/}
