@@ -57,9 +57,9 @@ module Gitstats
 
           <body>
             <!--Div that will hold the pie chart-->
-            <div id="chart_div" styles="margin:auto"></div>
-            <br />
             <div id="table_div"></div>
+            <br />
+            <div id="chart_div" styles="margin:auto"></div>
           </body>
         </html>
         EOB
